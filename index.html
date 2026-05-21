@@ -196,6 +196,13 @@
     <li>Anything I can't verify against a funder's source page.</li>
   </ul>
 
+  <h3>Awards and funding rates</h3>
+  <ul>
+    <li>🎯 <em>N awards</em> — the funder's stated number of awards expected per cycle, taken from the NOFO/RFA text.</li>
+    <li>📊 <em>~X→Y→Z% funded</em> — recent published funding rates, latest year on the right. A single number means only one year of data was available. NIH coverage is most complete (via the <a href="https://report.nih.gov/data_book" target="_blank" rel="noopener noreferrer">NIH Data Book</a>); SBIR coverage is partial; accelerators and most foundations don't publish acceptance rates.</li>
+    <li>Absence of a chip means "not published," not "low." Cards without funding-rate chips aren't lower-odds — the funder just hasn't released the data.</li>
+  </ul>
+
   <button class="close" onclick="document.getElementById('aboutModal').close()">Close</button>
 </dialog>
 
@@ -216,9 +223,10 @@ const OPPORTUNITIES = [
     description: "Flagship NIH mechanism for an independent, hypothesis-driven research project. Typical 3–5 year duration.",
     tags: ["medical", "research"],
     award: 500000,
+    historicalSuccessRate: [0.216, 0.187, 0.13],
     kind: "call",
     deadline: "2026-06-05",
-    deadlineNote: "Standard new R01 deadline (Cycle II)."
+    deadlineNote: "Standard new R01 deadline (Cycle II). Success rate trend (FY2023 → FY2024 → FY2025) per NIH RePORT Data Book Category 10 / NIH Extramural Nexus. FY2025's 13.0% is the lowest in over two decades; rates vary substantially by IC."
   },
   {
     title: "NIH R21 — Exploratory/Developmental Research (new, Cycle II)",
@@ -282,10 +290,11 @@ const OPPORTUNITIES = [
     url: "https://grants.nih.gov/grants/guide/rfa-files/RFA-NS-25-023.html",
     description: "Phased R61/R33 mechanism for preclinical analgesic discovery — milestone-driven progression from early target validation through lead candidate development.",
     tags: ["medical", "research"],
-    award: null,
+    award: 350000,
+    awardsExpected: [4, 5],
     kind: "call",
     deadline: "2027-01-15",
-    deadlineNote: "Application due January 15, 2027."
+    deadlineNote: "Application due January 15, 2027. NIH HEAL intends to commit ~$2.5M total to fund 4-5 awards in FY2025. Annual budget cap $350K direct; total project up to 3 years (max 2 in R61 phase, max 2 in R33 phase). NINDS funded to the 8th percentile in FY2025 with some funding past the 16th; HEAL-specific RFAs are scored separately from the standard payline."
   },
   {
     title: "PAR-25-450 — NCATS Clinical Trial Readiness for Rare Diseases (R21)",
@@ -318,7 +327,7 @@ const OPPORTUNITIES = [
     award: 500000,
     kind: "call",
     deadline: "2026-06-05",
-    deadlineNote: "Uses standard NIH receipt dates (Feb 5 / Jun 5 / Oct 5). Clinical trials not allowed."
+    deadlineNote: "Uses standard NIH receipt dates (Feb 5 / Jun 5 / Oct 5). Clinical trials not allowed. NIMH FY2025 payline was the 20th percentile for R01s — among the more generous IC paylines; ESI applicants typically get an additional cushion."
   },
   {
     title: "Wellcome — Infectious Disease Clinical Trial Development Award",
@@ -470,9 +479,10 @@ const OPPORTUNITIES = [
     description: "R01 for ESI applicants proposing research in a new direction — no preliminary data required. Applicant cannot have served as PI on a prior NIH R01-equivalent. PAR open through Aug 26, 2028.",
     tags: ["medical", "research", "career"],
     award: 500000,
+    historicalSuccessRate: 0.185,
     kind: "call",
     deadline: "2026-06-05",
-    deadlineNote: "Standard NIH R01 receipt dates. Clinical trials not allowed."
+    deadlineNote: "Standard NIH R01 receipt dates. Clinical trials not allowed. NIH-wide ESI R01-equivalent success rate fell from 29.8% in FY2023 to 18.5% in FY2025 (per Statnews / NIH RePORT). Most ICs still extend an ESI payline 5–10+ percentile points above the general payline, which softens the drop somewhat for ESIs specifically."
   },
   {
     title: "RFA-OD-24-011 — NIH Research Software Engineer (RSE) Award (R50)",
@@ -480,10 +490,11 @@ const OPPORTUNITIES = [
     url: "https://grants.nih.gov/grants/guide/rfa-files/RFA-OD-24-011.html",
     description: "R50 award supporting research software engineers as career scientists at NIH-funded institutions. Recognizes the role of software engineering in modern biomedical research.",
     tags: ["research", "career", "ai", "digital health"],
-    award: null,
+    award: 300000,
+    awardsExpected: [18, 20],
     kind: "call",
     deadline: "2026-12-05",
-    deadlineNote: "RFA expires December 5, 2026. Verify exact application due dates on the RFA page."
+    deadlineNote: "RFA expires December 5, 2026. NIH ODSS intends to commit up to $6M in FY25 to fund 18-20 awards. Combined direct costs up to $300K over 3 years; max $200K direct in any single year. Verify exact application due dates on the RFA page."
   },
   {
     title: "PAR-26-042 — NLM Clinical Informatics R01",
@@ -525,6 +536,7 @@ const OPPORTUNITIES = [
     description: "$500K non-dilutive prize for Texas-based entrepreneurs and companies in applied sciences, biotechnology, engineering, life sciences, and medicine. No equity taken; full IP retention.",
     tags: ["prize", "medical", "startup"],
     award: 500000,
+    awardsExpected: 1,
     kind: "call",
     deadline: "2026-06-01",
     deadlineNote: "Closes June 1, 2026, 6:00pm CT. Texas-based applicants only. Recipients announced January 2027; ceremony at TAMEST Annual Conference in Houston, Feb 1, 2027."
@@ -536,6 +548,7 @@ const OPPORTUNITIES = [
     description: "$500K non-dilutive prize for senior PIs at Texas-based academic institutions, medical centers, and nonprofit research institutes. Covers autoimmune disorders, cardiopulmonary, clinical pharmacology, GI, maternal/children's health, musculoskeletal, neuropsychiatric, oncology, pathology, and psychiatry.",
     tags: ["prize", "medical", "research", "career"],
     award: 500000,
+    awardsExpected: 1,
     kind: "call",
     deadline: "2026-06-01",
     deadlineNote: "Closes June 1, 2026, 6:00pm CT. Texas-based, academic/nonprofit only. Eligibility restricted to PIs 15+ years past their first independent faculty appointment (2011 or earlier)."
@@ -547,6 +560,7 @@ const OPPORTUNITIES = [
     description: "$500K non-dilutive prize for senior PIs at Texas-based academic institutions and nonprofit research institutes. Covers animal biology, ecology and environmental science, entomology, infectious diseases and immunology, microbiology, and plant biology.",
     tags: ["prize", "medical", "research", "career"],
     award: 500000,
+    awardsExpected: 1,
     kind: "call",
     deadline: "2026-06-01",
     deadlineNote: "Closes June 1, 2026, 6:00pm CT. Texas-based, academic/nonprofit only. Eligibility restricted to PIs 15+ years past their first independent faculty appointment (2011 or earlier)."
@@ -558,6 +572,7 @@ const OPPORTUNITIES = [
     description: "Annual non-equity competition for health-focused startups. Scope: devices, therapeutics, preventive care, diagnostics, nutrition, wellness. Two tracks — FDA (products requiring FDA approval) and Non-FDA. Multi-event format with qualifying rounds, mentorship, and a final pitch to an Investor Judge panel.",
     tags: ["prize", "healthcare", "digital health", "medical", "startup"],
     award: 10000,
+    awardsExpected: 2,
     kind: "program",
     deadline: "annual",
     deadlineNote: "2026 cycle effectively closed: last qualifying-event registration was May 15, 2026. Portal submission due June 15, 2026 for already-qualified teams; Finals August 14-16, 2026 (Shreveport, LA, invitation only). $10K non-dilutive grand prize per track; Investor Judges may make separate investment offers. Watch for early-2027 registration window for next cycle."
@@ -640,15 +655,72 @@ const OPPORTUNITIES = [
     deadlineNote: "Solution Summary due July 10, 2026 (11:59pm ET). Tech presentation & cost proposal due Sep 9, 2026 if invited."
   },
   {
+    title: "ARPA-H 1-CURE — One Comprehensive Universal Radiotherapy for Everyone (ARPA-H-SOL-26-147)",
+    funder: "ARPA-H",
+    url: "https://arpa-h.gov/explore-funding/programs/1-cure",
+    description: "Single, rapid, low-cost radiotherapy approach effective against all cancer types — including metastatic and radiation-resistant tumors — through smart radiotherapy biomaterials and AI-driven treatment planning.",
+    tags: ["medical", "research", "ai"],
+    award: null,
+    kind: "call",
+    deadline: "2026-05-22",
+    deadlineNote: "Full Proposal due May 22, 2026. Solution Summary deadline was April 15, 2026 — applicants without a submitted Summary cannot apply this round. Solicitation ARPA-H-SOL-26-147."
+  },
+  {
+    title: "ARPA-H BoSS — BioStabilization Systems (ARPA-H-SOL-26-136)",
+    funder: "ARPA-H",
+    url: "https://arpa-h.gov/explore-funding/programs/boss",
+    description: "Technologies to produce, store, and ship cells at room temperature — replacing ultra-cold cryogenic storage requirements for biologic medicines.",
+    tags: ["medical", "research"],
+    award: null,
+    kind: "call",
+    deadline: "2026-03-26",
+    deadlineNote: "2026 cycle closed. Solution Summary was Feb 19, 2026; Solution Pitch was March 26, 2026. Solicitation ARPA-H-SOL-26-136. Watch for FY27 reopen."
+  },
+  {
+    title: "ARPA-H CIRCLE — Critical Illness Immunological Reprogramming and Control Point Learning Engine (ARPA-H-SOL-26-139)",
+    funder: "ARPA-H",
+    url: "https://arpa-h.gov/explore-funding/programs/circle",
+    description: "AI and diagnostic capabilities to track and modulate immune responses in critically ill ICU patients. Builds digital twins for personalized treatment with a path to commercial intervention. Teams may include academic, non-profit, and corporate performers.",
+    tags: ["medical", "healthcare", "digital health", "ai", "research"],
+    award: null,
+    kind: "call",
+    deadline: "2026-05-28",
+    deadlineNote: "Full Proposal due May 28, 2026, 1:00PM ET. Solution Summary was due March 30, 2026 — applicants without a submitted Summary cannot apply this round. Solicitation ARPA-H-SOL-26-139."
+  },
+  {
+    title: "ARPA-H IGoR — Intelligent Generator of Research (ARPA-H-SOL-26-155)",
+    funder: "ARPA-H",
+    url: "https://arpa-h.gov/explore-funding/programs/igor",
+    description: "Five-year, three-phase program building an AI-enabled biomedical research ecosystem. Four required technical components: mechanistic disease models, AI orchestration that designs experiments, layered protocol architecture for reproducibility, and a distributed marketplace of validated labs. Teams must address all four. Performers may be academic, non-profit, company, or any combination.",
+    tags: ["medical", "research", "ai"],
+    award: null,
+    awardsExpected: 3,
+    kind: "call",
+    deadline: "2026-06-25",
+    deadlineNote: "Solution Summary due June 25, 2026, 12:00PM ET; Full Proposal due August 6, 2026, 12:00PM ET. Solicitation ARPA-H-SOL-26-155. Approximately 3 Other Transaction (OT) agreements expected. Program announced May 5, 2026."
+  },
+  {
+    title: "ARPA-H HEARING — Hearing Enhancement through ARtificially Intelligent NeurotechnoloGy (ARPA-H-SOL-26-154)",
+    funder: "ARPA-H",
+    url: "https://arpa-h.gov/explore-funding/programs/hearing",
+    description: "Brain-driven hearing systems integrating intracortical devices, dynamic sound modulation, and auditory algorithms — treating hearing loss as a neurological condition at the auditory cortex.",
+    tags: ["medical", "digital health", "ai", "research"],
+    award: null,
+    kind: "call",
+    deadline: "2026-06-29",
+    deadlineNote: "Solution Summary due June 29, 2026, 2:00PM ET; Full Proposal due August 14, 2026, 2:00PM ET. Solicitation ARPA-H-SOL-26-154."
+  },
+  {
     title: "EIC Accelerator — Step 2 Cut-off (July 2026)",
     funder: "European Innovation Council",
     url: "https://eic.ec.europa.eu/eic-funding-opportunities/eic-accelerator_en",
     description: "Up to €2.5M grant + €0.5–15M equity for deep-tech SMEs. 2026 has 6 cut-offs total — next ones: Jul 8, Sep 2, Nov 4. Step 1 short application can be submitted any time.",
     tags: ["medical", "healthcare", "digital health", "ai", "startup", "eu"],
     award: 17500000,
+    historicalSuccessRate: 0.066,
     kind: "call",
     deadline: "2026-07-08",
-    deadlineNote: "Step 2 full-proposal cut-off July 8, 2026. Must have passed Step 1 first."
+    deadlineNote: "Step 2 full-proposal cut-off July 8, 2026. Must have passed Step 1 first. Recent per-cutoff overall success rates (Step 2 submission → funded): March 2024 ~7% (347/969 Step 2; 68/347 to interview; ~7% overall), October 2024 5.9% (71/1211), October 2025 6.6% (61/923). Step 3 (interview-to-funded) sits around 50% recently."
   },
   {
     title: "Wellcome Career Development Awards — July 2026 round",
@@ -1581,7 +1653,7 @@ const OPPORTUNITIES = [
 ];
 
 // Bump this whenever you verify or add opportunities. Format: YYYY-MM-DD.
-const LAST_UPDATED = "2026-05-19";
+const LAST_UPDATED = "2026-05-20";
 
 // Region tags. Any entry without one of these gets "us" as the default,
 // so US-based programs don't all need to be tagged manually.
@@ -1636,6 +1708,21 @@ function formatAward(a) {
   if (a >= 1e6) return "Up to $" + (a/1e6).toFixed(a%1e6===0?0:1) + "M";
   if (a >= 1e3) return "Up to $" + Math.round(a/1e3) + "K";
   return "$" + a;
+}
+
+function formatAwardsExpected(n) {
+  if (n == null) return null;
+  if (Array.isArray(n)) return n[0] + "–" + n[1] + " awards";
+  return n === 1 ? "1 award" : n + " awards";
+}
+
+function formatSuccessRate(r) {
+  if (r == null) return null;
+  if (Array.isArray(r)) {
+    if (r.length === 1) return "~" + Math.round(r[0] * 100) + "% funded";
+    return "~" + r.map(v => Math.round(v * 100)).join("→") + "% funded";
+  }
+  return "~" + Math.round(r * 100) + "% funded";
 }
 
 function renderTagBar() {
@@ -1733,6 +1820,8 @@ function render() {
       <div class="meta">
         <span class="pill deadline ${dl.cls}">📅 ${escape(dl.text)}</span>
         <span class="pill">💰 ${escape(formatAward(opp.award))}</span>
+        ${opp.awardsExpected != null ? `<span class="pill">🎯 ${escape(formatAwardsExpected(opp.awardsExpected))}</span>` : ""}
+        ${opp.historicalSuccessRate != null ? `<span class="pill">📊 ${escape(formatSuccessRate(opp.historicalSuccessRate))}</span>` : ""}
       </div>
       <div class="meta">${opp.tags.map(t => `<span class="tag">${escape(t)}</span>`).join("")}</div>
       ${opp.deadlineNote ? `<div class="funder">${escape(opp.deadlineNote)}</div>` : ""}
