@@ -130,7 +130,7 @@
     </div>
     <button id="aboutBtn" class="about-btn" aria-haspopup="dialog">About</button>
   </div>
-  <p>Funding for healthtech founders and biomedical PIs — grants, SBIRs, fellowships, accelerators, prizes, credit programs. Medical, healthcare, digital health, AI.</p>
+  <p>Funding for healthtech founders and biomedical PIs — grants, SBIRs, fellowships, accelerators, prizes, credit programs.</p>
   <p class="updated">Last updated: <span id="lastUpdated"></span></p>
 </header>
 <main>
@@ -146,12 +146,29 @@
       <option value="call">Specific calls only</option>
       <option value="program">Standing programs only</option>
     </select>
+    <select id="fundingFilter">
+      <option value="all">All funding types</option>
+      <option value="non-dilutive">Non-dilutive</option>
+      <option value="equity">Equity</option>
+      <option value="mixed">Mixed</option>
+    </select>
     <select id="deadlineFilter">
       <option value="all">All deadlines</option>
       <option value="next30">Next 30 days</option>
       <option value="next90">Next 90 days</option>
       <option value="next180">Next 6 months</option>
       <option value="rolling">Rolling / always open</option>
+    </select>
+    <select id="regionFilter">
+      <option value="all">All regions</option>
+      <option value="us">US</option>
+      <option value="uk">UK</option>
+      <option value="eu">EU</option>
+      <option value="canada">Canada</option>
+      <option value="australia">Australia</option>
+      <option value="japan">Japan</option>
+      <option value="israel">Israel</option>
+      <option value="global">Global</option>
     </select>
     <select id="sort">
       <option value="deadline">Sort: Soonest deadline</option>
@@ -199,8 +216,18 @@
   <h3>Awards and funding rates</h3>
   <ul>
     <li>🎯 <em>N awards</em> — the funder's stated number of awards expected per cycle, taken from the NOFO/RFA text.</li>
-    <li>📊 <em>~X→Y→Z% funded</em> — recent published funding rates, latest year on the right. A single number means only one year of data was available. NIH coverage is most complete (via the <a href="https://report.nih.gov/data_book" target="_blank" rel="noopener noreferrer">NIH Data Book</a>); SBIR coverage is partial; accelerators and most foundations don't publish acceptance rates.</li>
+    <li>📊 <em>~X→Y→Z% funded</em> — recent published funding rates, latest year on the right. A single number means only one year of data was available.</li>
     <li>Absence of a chip means "not published," not "low." Cards without funding-rate chips aren't lower-odds — the funder just hasn't released the data.</li>
+  </ul>
+
+  <h3>Data sources</h3>
+  <p>Funding rate and award-count data come from the funders' own published tables. The specific source for any given number is cited at the end of that entry's deadline note. Canonical sources:</p>
+  <ul>
+    <li><strong>NIH:</strong> <a href="https://report.nih.gov/data_book" target="_blank" rel="noopener noreferrer">NIH RePORT Data Book</a> — R01-equivalent, K-series, F-series, SBIR/STTR, and per-IC tables, updated annually.</li>
+    <li><strong>NIH IC-specific paylines:</strong> each institute's funding policy page (e.g. NIMH Interim Funding Strategy, NINDS Paylines).</li>
+    <li><strong>EU EIC Accelerator:</strong> European Innovation Council's published per-cutoff results.</li>
+    <li><strong>UK research councils:</strong> MRC outcomes pages, Wellcome annual report "Funded Research" section.</li>
+    <li><strong>ARPA-H, BARDA, CDMRP:</strong> per-program funding sections in the solicitation itself.</li>
   </ul>
 
   <button class="close" onclick="document.getElementById('aboutModal').close()">Close</button>
@@ -226,7 +253,7 @@ const OPPORTUNITIES = [
     historicalSuccessRate: [0.216, 0.187, 0.13],
     kind: "call",
     deadline: "2026-06-05",
-    deadlineNote: "Standard new R01 deadline (Cycle II). Success rate trend (FY2023 → FY2024 → FY2025) per NIH RePORT Data Book Category 10 / NIH Extramural Nexus. FY2025's 13.0% is the lowest in over two decades; rates vary substantially by IC."
+    deadlineNote: "Standard new R01 deadline (Cycle II). Success rate trend FY2023 → FY2024 → FY2025: 22% → 19% → 13%. FY2025 is the lowest in over two decades; rates vary substantially by IC. Source: NIH Data Book, R01-Equivalent Grants."
   },
   {
     title: "NIH R21 — Exploratory/Developmental Research (new, Cycle II)",
@@ -257,9 +284,10 @@ const OPPORTUNITIES = [
     description: "Mentored career development for early-career investigators (K01, K08, K23, K99/R00, etc.).",
     tags: ["medical", "research", "career"],
     award: null,
+    historicalSuccessRate: [0.32, 0.31, 0.25],
     kind: "call",
     deadline: "2026-06-12",
-    deadlineNote: "Standard new K-series deadline (Cycle II)."
+    deadlineNote: "Standard new K-series deadline (Cycle II). K-total NIH-wide success rate: 32% → 31% → 25% (FY23 → FY24 → FY25). By type (FY25): K01 22%, K08 30%, K23 31%, K99 20%, K12 49%. K01 saw the steepest drop (38% → 22% in two years). Source: NIH Data Book, Research Career Development Awards."
   },
   {
     title: "NIH SBIR/STTR Program",
@@ -268,8 +296,9 @@ const OPPORTUNITIES = [
     description: "Non-dilutive funding for small businesses developing biomedical/health tech. Phase I up to ~$314K, Phase II up to ~$2.1M. Includes Direct-to-Phase II for companies with prior feasibility data.",
     tags: ["medical", "digital health", "ai", "startup"],
     award: 2095000,
+    historicalSuccessRate: [0.16, 0.10, 0.08],
     deadline: "rolling",
-    deadlineNote: "Program was reauthorized April 13, 2026 after a lapse — no active NOFOs as of May 2026. Next standard receipt date is September 5, 2026; new NOFOs will be forecasted on Grants.gov before opening. Watch SEED for the FY26 Omnibus."
+    deadlineNote: "Program was reauthorized April 13, 2026 after a lapse — no active NOFOs as of May 2026. Next standard receipt date is September 5, 2026; new NOFOs will be forecasted on Grants.gov before opening. Watch SEED for the FY26 Omnibus. SBIR Phase I success rate trend (FY23 → FY24 → FY25): 16% → 10% → 8%. SBIR Phase II: 26% → 18% → 15%. SBIR Fast Track: 18% → 12% → 8%. SBIR Overall: 19% → 12% → 10%. NIH doesn't publish STTR-specific success rates; the chip and all trends here reflect SBIR only. Source: NIH Data Book, SBIR Success Rates of Competing Applications by Phase."
   },
 
   // ========== CURRENTLY OPEN SPECIFIC CALLS (verified May 2026) ==========
@@ -294,7 +323,7 @@ const OPPORTUNITIES = [
     awardsExpected: [4, 5],
     kind: "call",
     deadline: "2027-01-15",
-    deadlineNote: "Application due January 15, 2027. NIH HEAL intends to commit ~$2.5M total to fund 4-5 awards in FY2025. Annual budget cap $350K direct; total project up to 3 years (max 2 in R61 phase, max 2 in R33 phase). NINDS funded to the 8th percentile in FY2025 with some funding past the 16th; HEAL-specific RFAs are scored separately from the standard payline."
+    deadlineNote: "Application due January 15, 2027. NIH HEAL intends to commit ~$2.5M total to fund 4-5 awards in FY2025. Annual budget cap $350K direct; total project up to 3 years (max 2 in R61 phase, max 2 in R33 phase). NINDS funded to the 8th percentile in FY2025 with some funding past the 16th; HEAL-specific RFAs are scored separately from the standard payline. Sources: RFA-NS-25-023 funding section; NINDS payline page."
   },
   {
     title: "PAR-25-450 — NCATS Clinical Trial Readiness for Rare Diseases (R21)",
@@ -327,7 +356,7 @@ const OPPORTUNITIES = [
     award: 500000,
     kind: "call",
     deadline: "2026-06-05",
-    deadlineNote: "Uses standard NIH receipt dates (Feb 5 / Jun 5 / Oct 5). Clinical trials not allowed. NIMH FY2025 payline was the 20th percentile for R01s — among the more generous IC paylines; ESI applicants typically get an additional cushion."
+    deadlineNote: "Uses standard NIH receipt dates (Feb 5 / Jun 5 / Oct 5). Clinical trials not allowed. NIMH FY2025 payline was the 20th percentile for R01s — among the more generous IC paylines; ESI applicants typically get an additional cushion. Source: NIMH FY2025 Interim Funding Strategy."
   },
   {
     title: "Wellcome — Infectious Disease Clinical Trial Development Award",
@@ -369,6 +398,7 @@ const OPPORTUNITIES = [
     description: "13-week AI-focused healthcare accelerator powered by Johns Hopkins, CareFirst BlueCross BlueShield, University of Maryland Medical System, UMD Baltimore, and MedStar Health. Standard Techstars $120K deal. Focus areas: care delivery, clinical operations, revenue cycle, patient engagement, population health.",
     tags: ["accelerator", "healthcare", "digital health", "ai", "startup"],
     award: 120000,
+    funding: "equity",
     kind: "call",
     deadline: "2026-06-10",
     deadlineNote: "Applications close June 10, 2026. Program runs Sep 14 – Dec 10, 2026 in Baltimore."
@@ -482,7 +512,7 @@ const OPPORTUNITIES = [
     historicalSuccessRate: 0.185,
     kind: "call",
     deadline: "2026-06-05",
-    deadlineNote: "Standard NIH R01 receipt dates. Clinical trials not allowed. NIH-wide ESI R01-equivalent success rate fell from 29.8% in FY2023 to 18.5% in FY2025 (per Statnews / NIH RePORT). Most ICs still extend an ESI payline 5–10+ percentile points above the general payline, which softens the drop somewhat for ESIs specifically."
+    deadlineNote: "Standard NIH R01 receipt dates. Clinical trials not allowed. NIH-wide ESI R01-equivalent success rate fell from 29.8% in FY2023 to 18.5% in FY2025. Most ICs still extend an ESI payline 5–10+ percentile points above the general payline, which softens the drop somewhat for ESIs specifically. Sources: NIH RePORT, Statnews (Dec 2025)."
   },
   {
     title: "RFA-OD-24-011 — NIH Research Software Engineer (RSE) Award (R50)",
@@ -717,10 +747,11 @@ const OPPORTUNITIES = [
     description: "Up to €2.5M grant + €0.5–15M equity for deep-tech SMEs. 2026 has 6 cut-offs total — next ones: Jul 8, Sep 2, Nov 4. Step 1 short application can be submitted any time.",
     tags: ["medical", "healthcare", "digital health", "ai", "startup", "eu"],
     award: 17500000,
+    funding: "mixed",
     historicalSuccessRate: 0.066,
     kind: "call",
     deadline: "2026-07-08",
-    deadlineNote: "Step 2 full-proposal cut-off July 8, 2026. Must have passed Step 1 first. Recent per-cutoff overall success rates (Step 2 submission → funded): March 2024 ~7% (347/969 Step 2; 68/347 to interview; ~7% overall), October 2024 5.9% (71/1211), October 2025 6.6% (61/923). Step 3 (interview-to-funded) sits around 50% recently."
+    deadlineNote: "Step 2 full-proposal cut-off July 8, 2026. Must have passed Step 1 first. Recent per-cutoff overall success rates (Step 2 submission → funded): March 2024 ~7% (347/969 Step 2; 68/347 to interview; ~7% overall), October 2024 5.9% (71/1211), October 2025 6.6% (61/923). Step 3 (interview-to-funded) sits around 50% recently. Source: European Innovation Council, published per-cutoff results."
   },
   {
     title: "Wellcome Career Development Awards — July 2026 round",
@@ -731,7 +762,7 @@ const OPPORTUNITIES = [
     award: null,
     kind: "call",
     deadline: "2026-07-28",
-    deadlineNote: "Application deadline July 28, 2026; interviews January 2027. Subsequent rounds in November 2026 and April 2027."
+    deadlineNote: "Application deadline July 28, 2026; interviews January 2027. Subsequent rounds in November 2026 and April 2027. Scheme-specific success rate isn't published; Wellcome portfolio-wide rate fell sharply: 22.3% in 2023/24 (615/2,757) to 16.6% in 2024/25 (711/4,289) — driven by a 56% rise in applications with only 16% more awards. Source: Wellcome Trust Annual Report 2025, Funding data section."
   },
   {
     title: "Innovate UK — Biomedical Catalyst 2026",
@@ -1001,9 +1032,10 @@ const OPPORTUNITIES = [
     title: "1517 Fund / Medici Project",
     funder: "1517 Fund",
     url: "https://www.1517fund.com/",
-    description: "Pre-seed checks (~$50K–$500K) for young founders skipping or leaving college. Health and AI portfolio companies.",
+    description: "Equity venture fund. Pre-seed and seed checks ($50K–$1M; average ~$400K) for young founders skipping or leaving college; deep tech, biotech, and AI in scope. Medici Project (sister program) gives no-strings $1K+ stipends to kickstart projects — that piece is non-dilutive.",
     tags: ["fellowship", "startup", "ai"],
-    award: 500000,
+    award: 1000000,
+    funding: "equity",
     deadline: "rolling",
     deadlineNote: "Rolling intake."
   },
@@ -1014,6 +1046,7 @@ const OPPORTUNITIES = [
     description: "Was an online accelerator for ambitious outsiders. Funded 150+ companies with 300+ founders in 50+ countries before pausing new investments.",
     tags: ["accelerator", "startup", "ai"],
     award: 100000,
+    funding: "equity",
     deadline: "inactive",
     deadlineNote: "Pioneer stopped making new investments in 2024."
   },
@@ -1120,6 +1153,7 @@ const OPPORTUNITIES = [
     description: "Mentor-driven 12-week hybrid healthcare accelerator (Sep–Nov in Dallas), 8–12 startups per cohort. Cash investment + ~$200K in-kind perks. 200+ mentor network across healthcare.",
     tags: ["accelerator", "healthcare", "digital health", "startup"],
     award: 30000,
+    funding: "equity",
     deadline: "annual",
     deadlineNote: "Annual cohort runs Sep–Nov; applications typically due spring (2026 cycle deadlines have passed). Apply early — diligence cycles fill up."
   },
@@ -1160,6 +1194,7 @@ const OPPORTUNITIES = [
     description: "Cambridge MA-based nonprofit incubator/accelerator for Tough Tech startups (biotech, climate, deep-tech). 220,000 sq ft of fully-managed wet lab/engineering space. Engine Ventures invests separately.",
     tags: ["incubator", "medical", "ai", "startup"],
     award: null,
+    funding: "mixed",
     deadline: "rolling",
     deadlineNote: "Rolling applications for residency and Engine Accelerator programs — check engine.xyz."
   },
@@ -1187,9 +1222,10 @@ const OPPORTUNITIES = [
     title: "Mayo Clinic Platform_Accelerate",
     funder: "Mayo Clinic",
     url: "https://www.mayoclinicplatform.org/accelerate/",
-    description: "20-week accelerator for AI/digital-health startups with access to Mayo's de-identified clinical data and clinical experts. Equity-light.",
+    description: "20-week accelerator for AI/digital-health startups with access to Mayo's de-identified clinical data and clinical experts. Mayo Clinic Platform takes an equity position via convertible note or SAFE based on the startup's most recent valuation.",
     tags: ["accelerator", "digital health", "ai", "healthcare", "startup"],
     award: null,
+    funding: "equity",
     deadline: "annual",
     deadlineNote: "Two cohorts per year; check site for current application window."
   },
@@ -1200,6 +1236,7 @@ const OPPORTUNITIES = [
     description: "12-month healthtech program for Seed+ and Late Seed healthcare companies advancing toward commercialization. Capital investment (amount not publicly disclosed), real-world validation across a national network of academic medical centers, dedicated support teams, office space near Cedars-Sinai Medical Center, curated FDA/EMR/billing sessions. 91 companies across 10 classes.",
     tags: ["accelerator", "digital health", "healthcare", "startup"],
     award: null,
+    funding: "equity",
     deadline: "annual",
     deadlineNote: "Annual cohort; check site for current application window. Previously a 3-month program with $100K — rebranded and restructured as Accelerator+ with a 12-month format."
   },
@@ -1240,6 +1277,7 @@ const OPPORTUNITIES = [
     description: "Was a 14-week post-revenue accelerator for digital-health startups focused on customer acquisition and follow-on funding. Dreamit has since shifted to a venture fund model — the HealthTech accelerator does not appear to be actively running cohorts.",
     tags: ["accelerator", "digital health", "startup"],
     award: null,
+    funding: "equity",
     deadline: "inactive",
     deadlineNote: "No active accelerator cohorts as of May 2026. Dreamit now operates as a Healthtech Fund — bookmark and verify if cohort programming resumes."
   },
@@ -1260,6 +1298,7 @@ const OPPORTUNITIES = [
     description: "13-week mentorship-driven accelerator with $120K in funding (typically $20K + $100K convertible) for ~6% equity. Multiple health-themed cohorts run yearly.",
     tags: ["accelerator", "healthcare", "digital health", "ai", "startup"],
     award: 120000,
+    funding: "equity",
     deadline: "rolling",
     deadlineNote: "Different cohorts have different deadlines — check the accelerators page."
   },
@@ -1304,6 +1343,7 @@ const OPPORTUNITIES = [
     description: "Not a grant — equity-based seed program ($500K standard deal). Strong cohort presence for healthcare and AI startups.",
     tags: ["accelerator", "startup", "healthcare", "digital health", "ai"],
     award: 500000,
+    funding: "equity",
     deadline: "annual",
     deadlineNote: "Two batches per year (Winter and Summer); deadlines are quarterly-ish."
   },
@@ -1595,6 +1635,7 @@ const OPPORTUNITIES = [
     description: "Talent investor: 6-month cofounder-matching programme with pre-seed funding. Cohorts in London, Paris, Berlin, Bangalore, Singapore. Health and AI strong.",
     tags: ["accelerator", "fellowship", "ai", "digital health", "startup", "uk", "eu", "global"],
     award: null,
+    funding: "equity",
     deadline: "rolling",
     deadlineNote: "Continuous applications; cohort-specific start dates."
   },
@@ -1605,6 +1646,7 @@ const OPPORTUNITIES = [
     description: "Global pre-seed talent investor with cohorts in 25+ cities. Cofounder matching, residency, then investment. US standard: $250K SAFE at $2.75M post-money (~9% equity); other geographies typically $100–250K with 7–10% equity, structured as SAFE, convertible note, or equity. Health and AI represented.",
     tags: ["accelerator", "fellowship", "ai", "digital health", "startup", "global"],
     award: 250000,
+    funding: "equity",
     deadline: "rolling",
     deadlineNote: "Continuous applications; rolling cohorts by location. Founders work with Antler in person for ~8 weeks before final investment decision."
   },
@@ -1615,6 +1657,7 @@ const OPPORTUNITIES = [
     description: "Deep-tech / biotech accelerator renamed from IndieBio in 2026. Resourced labs, offices, and event spaces in San Francisco, New York City, and Newark. $525K initial investment. Latest cohorts: SF Batch 14, NY Batch 06 — synthetic biology, drug discovery, diagnostics, digital health, sustainable agriculture.",
     tags: ["accelerator", "medical", "healthcare", "digital health", "startup", "global"],
     award: 525000,
+    funding: "equity",
     deadline: "rolling",
     deadlineNote: "Two cohorts per year per location; rolling applications. The IndieBio brand was retired in 2026 — programs now operate under the SOSV name."
   },
@@ -1625,6 +1668,7 @@ const OPPORTUNITIES = [
     description: "Hard-tech accelerator with $250K initial check; supports medical-device and health-hardware startups alongside industrial robotics and climate.",
     tags: ["accelerator", "medical", "startup", "global"],
     award: 250000,
+    funding: "equity",
     deadline: "rolling",
     deadlineNote: "Rolling applications."
   },
@@ -1653,7 +1697,7 @@ const OPPORTUNITIES = [
 ];
 
 // Bump this whenever you verify or add opportunities. Format: YYYY-MM-DD.
-const LAST_UPDATED = "2026-05-20";
+const LAST_UPDATED = "2026-05-22";
 
 // Region tags. Any entry without one of these gets "us" as the default,
 // so US-based programs don't all need to be tagged manually.
@@ -1671,7 +1715,9 @@ const state = {
   tags: new Set(),
   statusFilter: "active",
   kindFilter: "all",
+  fundingFilter: "all",
   deadlineFilter: "all",
+  regionFilter: "all",
   sort: "deadline",
 };
 function kindOf(opp) { return opp.kind || "program"; }
@@ -1729,6 +1775,7 @@ function renderTagBar() {
   const bar = document.getElementById("tagbar");
   bar.innerHTML = "";
   for (const t of ALL_TAGS) {
+    if (REGION_TAGS.has(t)) continue; // regions live in the regionFilter dropdown
     const b = document.createElement("button");
     b.textContent = t;
     if (state.tags.has(t)) b.classList.add("active");
@@ -1751,6 +1798,11 @@ function matches(opp) {
     for (const t of state.tags) if (!opp.tags.includes(t)) return false;
   }
   if (state.kindFilter !== "all" && kindOf(opp) !== state.kindFilter) return false;
+  if (state.fundingFilter !== "all") {
+    const f = opp.funding || "non-dilutive";
+    if (f !== state.fundingFilter) return false;
+  }
+  if (state.regionFilter !== "all" && !opp.tags.includes(state.regionFilter)) return false;
   if (state.statusFilter === "active" && isPast(opp)) return false;
   if (state.statusFilter === "passed" && !isPast(opp)) return false;
   if (state.deadlineFilter !== "all") {
@@ -1791,16 +1843,18 @@ function render() {
   empty.style.display = items.length ? "none" : "block";
   summary.textContent = `${items.length} of ${OPPORTUNITIES.length} opportunities`;
 
-  const defaults = { q: "", statusFilter: "active", kindFilter: "all", deadlineFilter: "all" };
+  const defaults = { q: "", statusFilter: "active", kindFilter: "all", fundingFilter: "all", deadlineFilter: "all", regionFilter: "all" };
   const qInput = document.getElementById("q");
   qInput.classList.toggle("active-filter", state.q !== defaults.q);
-  for (const k of ["statusFilter", "kindFilter", "deadlineFilter"]) {
+  for (const k of ["statusFilter", "kindFilter", "fundingFilter", "deadlineFilter", "regionFilter"]) {
     document.getElementById(k).classList.toggle("active-filter", state[k] !== defaults[k]);
   }
   const anyActive = state.q !== defaults.q
     || state.statusFilter !== defaults.statusFilter
     || state.kindFilter !== defaults.kindFilter
+    || state.fundingFilter !== defaults.fundingFilter
     || state.deadlineFilter !== defaults.deadlineFilter
+    || state.regionFilter !== defaults.regionFilter
     || state.tags.size > 0;
   document.getElementById("clearFilters").hidden = !anyActive;
 
@@ -1844,18 +1898,24 @@ document.getElementById("clearFilters").addEventListener("click", () => {
   state.q = "";
   state.statusFilter = "active";
   state.kindFilter = "all";
+  state.fundingFilter = "all";
   state.deadlineFilter = "all";
+  state.regionFilter = "all";
   state.tags = new Set();
   document.getElementById("q").value = "";
   document.getElementById("statusFilter").value = "active";
   document.getElementById("kindFilter").value = "all";
+  document.getElementById("fundingFilter").value = "all";
   document.getElementById("deadlineFilter").value = "all";
+  document.getElementById("regionFilter").value = "all";
   renderTagBar();
   render();
 });
 document.getElementById("statusFilter").addEventListener("change", e => { state.statusFilter = e.target.value; render(); });
 document.getElementById("kindFilter").addEventListener("change", e => { state.kindFilter = e.target.value; render(); });
+document.getElementById("fundingFilter").addEventListener("change", e => { state.fundingFilter = e.target.value; render(); });
 document.getElementById("deadlineFilter").addEventListener("change", e => { state.deadlineFilter = e.target.value; render(); });
+document.getElementById("regionFilter").addEventListener("change", e => { state.regionFilter = e.target.value; render(); });
 document.getElementById("sort").addEventListener("change", e => { state.sort = e.target.value; render(); });
 
 renderTagBar();

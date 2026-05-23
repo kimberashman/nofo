@@ -1,6 +1,9 @@
 CLAUDE.md
 voice.md
+linkedin-posts.md
 entries.csv
+data_reporter/
+annual_reports/
 .claude/
 .DS_Store
 *.zone
