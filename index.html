@@ -311,7 +311,18 @@ const OPPORTUNITIES = [
     award: 2095000,
     historicalSuccessRate: [0.16, 0.10, 0.08],
     deadline: "rolling",
-    deadlineNote: "Program reauthorized April 13, 2026 (S. 3971, Small Business Innovation and Economic Security Act) and extended through Sept 30, 2031; new parent NOFOs posted May 28, 2026. Standard hard caps unchanged: Phase I ~$323K and Phase II ~$2.15M total costs. For specific topics, NIH holds an SBA waiver allowing larger Phase I/II awards — check the IC's Funding Considerations page for current waiver-topic ceilings. Next standard receipt date is September 5, 2026. See PA-27-101 (Phase IIB Strategic Breakthrough Award) and PAR-27-098 (Commercialization Readiness Pilot) below for the post-reauthorization late-stage mechanisms. SBIR Phase I success rate trend (FY23 → FY24 → FY25): 16% → 10% → 8%. SBIR Phase II: 26% → 18% → 15%. SBIR Fast Track: 18% → 12% → 8%. SBIR Overall: 19% → 12% → 10%. NIH doesn't publish STTR-specific success rates; the chip and all trends here reflect SBIR only. Source: NIH Data Book, SBIR Success Rates of Competing Applications by Phase."
+    deadlineNote: "Program lapsed Oct 1, 2025; reauthorized April 13, 2026 (S. 3971, Small Business Innovation and Economic Security Act) and extended through Sept 30, 2031. New parent NOFOs posted May 28, 2026 — see PA-27-100 (Parent SBIR Omnibus), PA-27-101 (Phase IIB Strategic Breakthrough), and PAR-27-098 (Commercialization Readiness Pilot) below as the currently-active SBIR submission destinations. NIH expired 23 specialty SBIR/STTR NOFOs on Nov 17, 2025 via NOT-OD-26-006 (HEAL pain, NINDS Exploratory Clinical Trials, NEI U44, NIAID U44, BPN U44, AD/ADRD, Health Inequities Diagnostics, others); reissues forecasted but not yet posted as of mid-2026. Standard hard caps unchanged: Phase I ~$323K, Phase II ~$2.15M total costs. For specific topics, NIH holds an SBA waiver allowing larger Phase I/II awards — check the IC's Funding Considerations page. Next standard receipt date is September 5, 2026. SBIR Phase I success rate trend (FY23 → FY24 → FY25): 16% → 10% → 8%. SBIR Phase II: 26% → 18% → 15%. SBIR Fast Track: 18% → 12% → 8%. SBIR Overall: 19% → 12% → 10%. NIH doesn't publish STTR-specific success rates; the chip and all trends here reflect SBIR only. Source: NIH Data Book, SBIR Success Rates of Competing Applications by Phase; NOT-OD-26-006."
+  },
+  {
+    title: "PA-27-100 — NIH/CDC/FDA SBIR Grant (Parent SBIR R43/R44 Clinical Trial Optional)",
+    funder: "NIH / HHS / CDC / FDA",
+    url: "https://simpler.grants.gov/opportunity/d1ba49e5-3684-4420-849a-ab2330ec493e",
+    description: "The active Parent SBIR omnibus NOFO posted May 28, 2026 after the SBIR/STTR reauthorization. Submission destination for any NIH/CDC/FDA SBIR Phase I or II application across most topic areas right now — particularly important during the current window where specialty SBIR PARs (HEAL pain, NINDS Exploratory Clinical Trials, NEI U44, NIAID U44, BPN U44, Alzheimer's/ADRD, Health Inequities Diagnostics) are expired and not yet reissued. Clinical Trial Optional.",
+    tags: ["medical", "healthcare", "digital health", "ai", "startup"],
+    award: 2153927,
+    kind: "call",
+    deadline: "2026-09-05",
+    deadlineNote: "Standard SBIR receipt dates: Sept 5, 2026 / Jan 5, 2027 / Apr 5, 2027 (cycles I, II, III). Expires June 4, 2027. Phase I standard cap ~$323,090; Phase II ~$2,153,927 total costs. For waiver-eligible topics, larger awards are possible — check each IC's Funding Considerations page. Eligibility: US small business concerns. Source: NIH PA-27-100 (simpler.grants.gov)."
   },
   {
     title: "PA-27-101 — NIH SBIR Phase IIB Strategic Breakthrough Award (R44)",
@@ -334,6 +345,39 @@ const OPPORTUNITIES = [
     kind: "call",
     deadline: "2027-04-05",
     deadlineNote: "Closing date April 5, 2027 per simpler.grants.gov listing; verify intermediate due dates against the full PAR text. Overall cap up to $4,091,634 total costs across a maximum 3-year project. Per-IC ceilings vary substantially: most ICs cap annual or total awards in the $250K–$2M range; NIAID up to $1M/yr × 3 years; NINDS up to $300K across all years. Eligibility: small business concerns with active or recently-active (within 36 months) NIH SBIR/STTR Phase II or Phase IIB. Activity code SB1. Use this if you don't have committed match funding for PA-27-101 — no match requirement here. Source: NIH PAR-27-098 (simpler.grants.gov)."
+  },
+  {
+    title: "PAR-27-039 — NIH Small Business Transition Grant for New Entrepreneurs (SBIR, R43/R44)",
+    funder: "NIH / HHS",
+    url: "https://simpler.grants.gov/opportunity/86b34b22-1c01-4d94-8256-f582a1f0af24",
+    description: "SBIR Phase I and Fast-Track support for first-time PIs transitioning to entrepreneurship. Combines R&D funding with explicit entrepreneurial training, mentoring, and career development. Requires a designated mentor with committed effort. PD/PI must be a first-time independent PI (no prior NIH/CDC research grant) and a US citizen or LPR.",
+    tags: ["medical", "healthcare", "digital health", "ai", "startup", "career"],
+    award: null,
+    kind: "call",
+    deadline: "2027-01-05",
+    deadlineNote: "Estimated application due date January 5, 2027 (forecasted; applications not currently being solicited as of mid-2026). Forecasted project start: July 1, 2027. Subsequent cycles expected to follow standard SBIR receipt dates (Jan 5 / Apr 5 / Sept 5). Eligibility: US small business concerns; PD/PI must be a first-time independent PI on any NIH/CDC research grant. Companion to PAR-27-040 (STTR version). Source: NIH PAR-27-039 (simpler.grants.gov)."
+  },
+  {
+    title: "PAR-27-040 — NIH Small Business Transition Grant for New Entrepreneurs (STTR, R41/R42)",
+    funder: "NIH / HHS",
+    url: "https://simpler.grants.gov/opportunity/2edbb110-beb6-4fb6-a884-da3e8130db32",
+    description: "STTR Phase I and Fast-Track support for first-time PIs transitioning to entrepreneurship. Combines R&D funding with entrepreneurial training, mentoring, and career development. STTR mechanism requires a formal partnership with a research institution (30%+ of work at the institution). Companion to PAR-27-039 (SBIR-only version).",
+    tags: ["medical", "healthcare", "digital health", "ai", "startup", "career"],
+    award: null,
+    kind: "call",
+    deadline: "2027-01-05",
+    deadlineNote: "Estimated application due date January 5, 2027 (forecasted; applications not currently being solicited as of mid-2026). Subsequent cycles follow standard STTR receipt dates. Eligibility: US small business concerns with research-institution partnership; PD/PI must be a first-time independent PI on any NIH/CDC research grant, US citizen or LPR. Pick this version when a lab-spinout / academic-partnership structure fits; pick PAR-27-039 (SBIR) for pure-company applicants. Source: NIH PAR-27-040 (simpler.grants.gov)."
+  },
+  {
+    title: "I-Corps at NIH — Entrepreneurship Training for SBIR/STTR Phase I Awardees",
+    funder: "NIH SEED (in partnership with NSF I-Corps)",
+    url: "https://seed.nih.gov/small-business-funding/funding-programs/i-corps-at-nih",
+    description: "8-week virtual entrepreneurship training program for current NIH or CDC SBIR/STTR Phase I awardees. Brings together biotech commercialization experts to deliver customer-discovery and lean-startup methodology. NOT a primary grant — it's a $55K supplement on top of existing Phase I funding to cover program costs.",
+    tags: ["medical", "healthcare", "digital health", "ai", "startup", "career"],
+    award: 55000,
+    kind: "program",
+    deadline: "annual",
+    deadlineNote: "Two cohorts per year, virtual format. Most recently advertised deadlines: March 27, 2026 and April 17, 2026 (both passed). Next cohort dates not yet posted as of mid-June 2026 — check seed.nih.gov for fall cohort schedule. Eligibility: small business with current NIH/CDC SBIR/STTR Phase I grant (no-cost extension may satisfy at some ICs). Program itself is free; the $55K supplement covers participation costs. Reference notice: NOT-OD-26-037. Source: NIH SEED I-Corps at NIH program page."
   },
 
   // ========== CURRENTLY OPEN SPECIFIC CALLS (verified May 2026) ==========
@@ -1130,6 +1174,17 @@ const OPPORTUNITIES = [
   },
 
   // ---------- Health-focused incubators & accelerators ----------
+  {
+    title: "JH-Howard NeuroTech Harbor — Neurotechnology Translation Hub",
+    funder: "NIH NIBIB Blueprint MedTech / Johns Hopkins + Howard University",
+    url: "https://neurotechharbor.org/",
+    description: "NIH Blueprint MedTech-funded translational hub for medical devices targeting neurological and brain conditions. Partnership between Johns Hopkins and Howard University, with explicit focus on bringing more African American and underrepresented founders into neurotechnology. $100M NIH funding over 5 years (since 2022); aim to launch 45 neurological health innovation projects. Multiple programs at different stages.",
+    tags: ["medical", "digital health", "ai", "startup", "career"],
+    award: 500000,
+    kind: "program",
+    deadline: "annual",
+    deadlineNote: "Multiple sub-programs: (a) Seedling Initiative — up to $50K plus ~6 months of mentorship and regulatory guidance for very early-stage ventures; (b) Early Entrepreneurs Program — up to $500K plus planning resources, expert mentorship, and commercialization support (most recent cohort deadline was extended to Jan 15, 2026 — check site for next cycle); (c) Optimizer track for later-stage projects. Diversity-of-applicant focus is structural, not afterthought. Check neurotechharbor.org for current open cohort dates. Source: NeuroTech Harbor (neurotechharbor.org); NIH Blueprint MedTech."
+  },
   {
     title: "Stanford Biodesign Faculty Fellowship",
     funder: "Stanford Mussallem Center for Biodesign",
