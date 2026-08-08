@@ -311,7 +311,7 @@ const OPPORTUNITIES = [
     award: 2095000,
     historicalSuccessRate: [0.16, 0.10, 0.08],
     deadline: "rolling",
-    deadlineNote: "Program lapsed Oct 1, 2025; reauthorized April 13, 2026 (S. 3971, Small Business Innovation and Economic Security Act) and extended through Sept 30, 2031. New parent NOFOs posted May 28, 2026 — see PA-27-100 (Parent SBIR Omnibus), PA-27-101 (Phase IIB Strategic Breakthrough), and PAR-27-098 (Commercialization Readiness Pilot) below as the currently-active SBIR submission destinations. NIH expired 23 specialty SBIR/STTR NOFOs on Nov 17, 2025 via NOT-OD-26-006 (HEAL pain, NINDS Exploratory Clinical Trials, NEI U44, NIAID U44, BPN U44, AD/ADRD, Health Inequities Diagnostics, others); reissues forecasted but not yet posted as of mid-2026. Standard hard caps unchanged: Phase I ~$323K, Phase II ~$2.15M total costs. For specific topics, NIH holds an SBA waiver allowing larger Phase I/II awards — check the IC's Funding Considerations page. Next standard receipt date is September 5, 2026. SBIR Phase I success rate trend (FY23 → FY24 → FY25): 16% → 10% → 8%. SBIR Phase II: 26% → 18% → 15%. SBIR Fast Track: 18% → 12% → 8%. SBIR Overall: 19% → 12% → 10%. NIH doesn't publish STTR-specific success rates; the chip and all trends here reflect SBIR only. Source: NIH Data Book, SBIR Success Rates of Competing Applications by Phase; NOT-OD-26-006."
+    deadlineNote: "Program lapsed Oct 1, 2025; reauthorized April 13, 2026 (S. 3971, Small Business Innovation and Economic Security Act) and extended through Sept 30, 2031. New parent NOFOs posted May 28, 2026 (revised early June 2026) — see PA-27-100 (Parent SBIR Omnibus), PA-27-101 (Phase IIB Strategic Breakthrough), PA-27-102 (Parent STTR Omnibus), and PAR-27-098 (Commercialization Readiness Pilot) below as the currently-active submission destinations. New HHS rule: applications capped at 9 per fiscal year per small business (new + renewal + resubmission + revision combined). NIH expired 23 specialty SBIR/STTR NOFOs on Nov 17, 2025 via NOT-OD-26-006 (HEAL pain, NINDS Exploratory Clinical Trials, NEI U44, NIAID U44, BPN U44, AD/ADRD, Health Inequities Diagnostics, others); reissues forecasted but not yet posted as of mid-2026. Standard hard caps unchanged: Phase I ~$323K, Phase II ~$2.15M total costs. For specific topics, NIH holds an SBA waiver allowing larger Phase I/II awards — check the IC's Funding Considerations page. Next standard receipt date is September 5, 2026. SBIR Phase I success rate trend (FY23 → FY24 → FY25): 16% → 10% → 8%. SBIR Phase II: 26% → 18% → 15%. SBIR Fast Track: 18% → 12% → 8%. SBIR Overall: 19% → 12% → 10%. NIH doesn't publish STTR-specific success rates; the chip and all trends here reflect SBIR only. Source: NIH Data Book, SBIR Success Rates of Competing Applications by Phase; NOT-OD-26-006."
   },
   {
     title: "PA-27-100 — NIH/CDC/FDA SBIR Grant (Parent SBIR R43/R44 Clinical Trial Optional)",
@@ -322,7 +322,18 @@ const OPPORTUNITIES = [
     award: 2153927,
     kind: "call",
     deadline: "2026-09-05",
-    deadlineNote: "Standard SBIR receipt dates: Sept 5, 2026 / Jan 5, 2027 / Apr 5, 2027 (cycles I, II, III). Expires June 4, 2027. Phase I standard cap ~$323,090; Phase II ~$2,153,927 total costs. For waiver-eligible topics, larger awards are possible — check each IC's Funding Considerations page. Eligibility: US small business concerns. Source: NIH PA-27-100 (simpler.grants.gov)."
+    deadlineNote: "Standard SBIR receipt dates: Sept 5, 2026 / Jan 5, 2027 / Apr 5, 2027 (cycles I, II, III). Expires June 4, 2027. Phase I standard cap ~$323,090; Phase II ~$2,153,927 total costs. For waiver-eligible topics, larger awards are possible — check each IC's Funding Considerations page. Eligibility: US small business concerns. HHS now caps applications at 9 per fiscal year (new + renewal + resubmission + revision combined) per small business — plan submissions accordingly. Source: NIH PA-27-100 (simpler.grants.gov)."
+  },
+  {
+    title: "PA-27-102 — NIH STTR Grant (Parent STTR R41/R42 Clinical Trial Optional)",
+    funder: "NIH / HHS",
+    url: "https://simpler.grants.gov/opportunity/ee37f2de-b959-4b45-86a9-43d06c944f24",
+    description: "The active Parent STTR omnibus NOFO — STTR sibling of PA-27-100. Requires a formal partnership with a nonprofit research institution (30%+ of work at the institution). Submission destination for any NIH STTR Phase I or II application across most topic areas right now. Clinical Trial Optional.",
+    tags: ["medical", "healthcare", "digital health", "ai", "startup"],
+    award: 2153927,
+    kind: "call",
+    deadline: "2026-09-05",
+    deadlineNote: "Standard STTR receipt dates: Sept 5, 2026 / Jan 5, 2027 / Apr 5, 2027. Expires June 4, 2027. Same Phase I/II caps as SBIR (~$323K / ~$2.15M). Eligibility: US small business concerns with an academic / nonprofit research partner. Same 9-per-fiscal-year HHS application cap applies. Pick this over PA-27-100 when a lab-spinout / academic-partnership structure fits; PA-27-100 (SBIR) for pure-company applicants. Source: NIH PA-27-102 (simpler.grants.gov)."
   },
   {
     title: "PA-27-101 — NIH SBIR Phase IIB Strategic Breakthrough Award (R44)",
@@ -852,6 +863,8 @@ const OPPORTUNITIES = [
     funding: "mixed",
     historicalSuccessRate: 0.066,
     kind: "call",
+    portfolioSample: ["Cellsius", "Neuron-Guard", "Corti", "Iktos"],
+    actualFocus: "Deep-tech across EU with ~40% MedTech/Biotech in recent rounds. AI-for-drug-discovery, gene therapy, medical devices, precision medicine, digital therapeutics all recurring. Requires SME status (EU-based). Bar is high: only 12-13% of Step 2 applicants reach interview; ~50% of interviewees are funded.",
     deadline: "2026-07-08",
     deadlineNote: "Step 2 full-proposal cut-off July 8, 2026. Must have passed Step 1 first. Recent per-cutoff overall success rates (Step 2 submission → funded): March 2024 ~7% (347/969 Step 2; 68/347 to interview; ~7% overall), October 2024 5.9% (71/1211), October 2025 6.6% (61/923). Step 3 (interview-to-funded) sits around 50% recently. Source: European Innovation Council, published per-cutoff results."
   },
@@ -1182,6 +1195,7 @@ const OPPORTUNITIES = [
     tags: ["medical", "digital health", "ai", "startup", "career"],
     award: 500000,
     kind: "program",
+    actualFocus: "Too new (launched 2022) for a mature public portfolio — first cohorts are underway. Structural focus on neurological devices: brain-machine interfaces, neurotech diagnostics, deep-brain stimulation adjuncts, wearables for neurological conditions. Diversity of applicants (esp. underrepresented founders) is program design, not aspiration.",
     deadline: "annual",
     deadlineNote: "Multiple sub-programs: (a) Seedling Initiative — up to $50K plus ~6 months of mentorship and regulatory guidance for very early-stage ventures; (b) Early Entrepreneurs Program — up to $500K plus planning resources, expert mentorship, and commercialization support (most recent cohort deadline was extended to Jan 15, 2026 — check site for next cycle); (c) Optimizer track for later-stage projects. Diversity-of-applicant focus is structural, not afterthought. Check neurotechharbor.org for current open cohort dates. Source: NeuroTech Harbor (neurotechharbor.org); NIH Blueprint MedTech."
   },
@@ -1234,6 +1248,8 @@ const OPPORTUNITIES = [
     description: "Chicago-based healthcare incubator with corporate partners, pilot opportunities, and specialized accelerators (Health Equity Innovation, Paratus — the BARDA Accelerator Network Hub for Digital Health). 200+ portfolio companies.",
     tags: ["incubator", "accelerator", "healthcare", "digital health", "startup"],
     award: null,
+    portfolioSample: ["Bone Health Technologies", "Regroup Therapy", "PhotoniCare"],
+    actualFocus: "1000+ ventures over MATTER's history — Chicago-based digital health with corporate partner-driven selection. Recent verticals: oral health (SMILE with CareQuest), health equity (Chicago West/South Side initiative), BARDA-partnered digital health security (Paratus). Non-dilutive across programs; membership model rather than cohort-only.",
     deadline: "rolling",
     deadlineNote: "Multiple cohort-based and rolling programs — see specific call entries below for current open accelerators."
   },
@@ -1318,6 +1334,8 @@ const OPPORTUNITIES = [
     description: "World's largest medtech accelerator for seed–Series C medical device, diagnostic, and digital-health companies. Cohort selects ~50+ for showcase; finalists compete for $350K Grand Prize and up to $500K total in non-dilutive awards.",
     tags: ["accelerator", "prize", "medical", "digital health", "startup"],
     award: 500000,
+    portfolioSample: ["Armor Medical", "Samay", "StrokeDx", "Rivanna Medical", "STENTiT", "BrainSpace", "Luminoah", "NeuroBionics", "Medipixel"],
+    actualFocus: "Winners are almost entirely Class II/III medical devices — cardiac, neuro, women's health, respiratory, stroke diagnostics. Prize-based (non-dilutive $350K grand prize); non-hardware / software-only companies rarely reach the finalist stage.",
     deadline: "annual",
     deadlineNote: "Annual cycle — applications close December for the following year (2026 cycle closed Dec 1, 2025). Next cycle opens fall 2026."
   },
@@ -1328,6 +1346,8 @@ const OPPORTUNITIES = [
     description: "Equity-free 4-month accelerator pairing digital-health startups with hospitals, payers, and life-sciences partners.",
     tags: ["accelerator", "digital health", "healthcare", "startup"],
     award: null,
+    portfolioSample: ["Canopie", "CardMedic", "Carium", "HUED"],
+    actualFocus: "Digital health with hospital-partner pilots — Boston-area hospitals + pharma partners drive selection. Recurring themes: maternal mental health, patient communication/equity, virtual care platforms, chronic disease management. 122 startups total; $770M raised cumulatively.",
     deadline: "annual",
     deadlineNote: "One annual cohort; applications typically open winter, close spring."
   },
@@ -1350,6 +1370,8 @@ const OPPORTUNITIES = [
     tags: ["accelerator", "digital health", "healthcare", "startup"],
     award: null,
     funding: "equity",
+    portfolioSample: ["Elaborate", "52North", "Acolyte Health", "Acorai", "Aevice Health", "LUMINARE", "Paperplane Therapeutics", "Syntho", "TestDynamics"],
+    actualFocus: "Clinical workflow, EMR integration, and hospital-integrated digital health. 90+ alumni have raised $800M+ cumulatively. Recent classes lean toward AI documentation, remote monitoring, workflow automation. Runs in partnership with Techstars — strong hospital-pilot access via Cedars-Sinai's clinical network.",
     deadline: "annual",
     deadlineNote: "Annual cohort; check site for current application window. Previously a 3-month program with $100K — rebranded and restructured as Accelerator+ with a 12-month format."
   },
@@ -1370,6 +1392,8 @@ const OPPORTUNITIES = [
     description: "No-strings-attached life-science/health-tech incubator network — entrepreneurs keep full IP and equity. 1,000+ portfolio companies across North America, APAC, and EMEA. Note: footprint has been contracting (NYC site transitioning to NYGC; JLABS @ TMC Houston vacating Jan 2026; EMEA is now virtual).",
     tags: ["incubator", "healthcare", "medical", "digital health", "startup"],
     award: null,
+    portfolioSample: ["Poseida Therapeutics", "Omniome", "HAYA Therapeutics", "Envisagenics", "Holmusk", "LinusBio"],
+    actualFocus: "Therapeutics and diagnostics-first — oncology, autoimmune, mental health, neuro. Portfolio has produced 44 IPOs and 35 acquisitions with $58B in cumulative deal value. Longer development runway than typical accelerators (10+ years) reflects therapeutics timelines. 826+ portfolio companies globally.",
     deadline: "rolling",
     deadlineNote: "Rolling resident applications at active sites (e.g. San Diego, South SF, Boston BIDMC, Shanghai, plus EMEA virtual). Verify current site list before applying."
   },
@@ -1412,6 +1436,8 @@ const OPPORTUNITIES = [
     tags: ["accelerator", "healthcare", "digital health", "ai", "startup"],
     award: 120000,
     funding: "equity",
+    portfolioSample: ["Clarify Health", "PainSquad"],
+    actualFocus: "Corporate + hospital-partnered accelerators. Each vertical takes 6-12 companies aligned with the specific partner's clinical priorities — care delivery, clinical operations, patient engagement, physician efficiency. Standard $120K for ~6% equity. Vertical-specific cohorts (Baltimore AI Health, Permanente Medicine, Northwestern Medicine) each have their own portfolio slant.",
     deadline: "rolling",
     deadlineNote: "Different cohorts have different deadlines — check the accelerators page."
   },
@@ -1457,6 +1483,8 @@ const OPPORTUNITIES = [
     tags: ["accelerator", "startup", "healthcare", "digital health", "ai"],
     award: 500000,
     funding: "equity",
+    portfolioSample: ["Exonic", "Clarion", "Andy", "Nurx", "Modern Fertility", "Hims/Hers", "Truepill"],
+    actualFocus: "Consumer-facing digital health, telehealth, and increasingly AI documentation/agents for clinical workflows dominate the healthtech portfolio. 589 healthcare companies funded overall; therapeutics/biotech is a smaller slice than the accelerator's stated openness would suggest.",
     deadline: "annual",
     deadlineNote: "Two batches per year (Winter and Summer); deadlines are quarterly-ish."
   },
@@ -1782,6 +1810,8 @@ const OPPORTUNITIES = [
     tags: ["accelerator", "medical", "healthcare", "digital health", "startup", "global"],
     award: 525000,
     funding: "equity",
+    portfolioSample: ["Memphis Meats/Upside Foods", "Geltor", "Prolific Machines", "Ten63 Therapeutics", "Proton Intelligence", "Xias Bio", "Perfect Day"],
+    actualFocus: "Historically biotech + synthetic biology + alt-protein heavy (Memphis Meats, Geltor, Perfect Day). Since 2024 the portfolio has broadened into general deep tech (quantum, robotics, climate). 310 graduates raised $3.6B (2015-2025). Healthcare-specific investments are a smaller-but-real slice today.",
     deadline: "rolling",
     deadlineNote: "Two cohorts per year per location; rolling applications. The IndieBio brand was retired in 2026 — programs now operate under the SOSV name."
   },
@@ -1793,6 +1823,8 @@ const OPPORTUNITIES = [
     tags: ["accelerator", "medical", "startup", "global"],
     award: 250000,
     funding: "equity",
+    portfolioSample: ["Umana Medical", "Rune Labs", "MediPulse"],
+    actualFocus: "Hard-tech / hardware focus — medical devices and health hardware alongside industrial robotics and climate. Diagnostic hardware, surgical robotics, and wearables are recurring themes but not the majority of any given cohort.",
     deadline: "rolling",
     deadlineNote: "Rolling applications."
   },
