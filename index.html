@@ -257,7 +257,7 @@
 const OPPORTUNITIES = [
   // ---------- NIH standard cycle (next upcoming dates from 2026-05-05) ----------
   {
-    title: "NIH R01 — Research Project Grant (new, Cycle II)",
+    title: "NIH R01 — Research Project Grant (new, Cycle III)",
     funder: "NIH",
     url: "https://grants.nih.gov/grants/funding/r01.htm",
     description: "Flagship NIH mechanism for an independent, hypothesis-driven research project. Typical 3–5 year duration.",
@@ -265,7 +265,7 @@ const OPPORTUNITIES = [
     award: 500000,
     historicalSuccessRate: [0.216, 0.187, 0.13],
     kind: "call",
-    deadline: "2026-06-05",
+    deadline: "2026-10-05",
     deadlineNote: "Standard new R01 deadline (Cycle II). Success rate trend FY2023 → FY2024 → FY2025: 22% → 19% → 13%. FY2025 is the lowest in over two decades; rates vary substantially by IC. Source: NIH Data Book, R01-Equivalent Grants."
   },
   {
@@ -445,7 +445,7 @@ const OPPORTUNITIES = [
     tags: ["healthcare", "digital health", "ai", "research"],
     award: 500000,
     kind: "call",
-    deadline: "2026-06-05",
+    deadline: "2026-10-05",
     deadlineNote: "Uses standard NIH receipt dates (Feb 5 / Jun 5 / Oct 5). Clinical trials not allowed. NIMH FY2025 payline was the 20th percentile for R01s — among the more generous IC paylines; ESI applicants typically get an additional cushion. Source: NIMH FY2025 Interim Funding Strategy."
   },
   {
@@ -579,7 +579,7 @@ const OPPORTUNITIES = [
     tags: ["medical", "research", "ai", "digital health"],
     award: 500000,
     kind: "call",
-    deadline: "2026-06-05",
+    deadline: "2026-10-05",
     deadlineNote: "Standard NIH R01 receipt dates (Feb 5 / Jun 5 / Oct 5). Clinical trials not allowed."
   },
   {
@@ -601,7 +601,7 @@ const OPPORTUNITIES = [
     tags: ["healthcare", "digital health", "ai", "research"],
     award: 500000,
     kind: "call",
-    deadline: "2026-06-05",
+    deadline: "2026-10-05",
     deadlineNote: "Standard NIH R01 receipt dates. Clinical trials optional."
   },
   {
@@ -612,7 +612,7 @@ const OPPORTUNITIES = [
     tags: ["healthcare", "ai", "research"],
     award: 500000,
     kind: "call",
-    deadline: "2026-06-05",
+    deadline: "2026-10-05",
     deadlineNote: "Standard NIH R01 receipt dates. Clinical trials not allowed."
   },
   {
@@ -624,7 +624,7 @@ const OPPORTUNITIES = [
     award: 500000,
     historicalSuccessRate: 0.185,
     kind: "call",
-    deadline: "2026-06-05",
+    deadline: "2026-10-05",
     deadlineNote: "Standard NIH R01 receipt dates. Clinical trials not allowed. NIH-wide ESI R01-equivalent success rate fell from 29.8% in FY2023 to 18.5% in FY2025. Most ICs still extend an ESI payline 5–10+ percentile points above the general payline, which softens the drop somewhat for ESIs specifically. Sources: NIH RePORT, Statnews (Dec 2025)."
   },
   {
@@ -647,7 +647,7 @@ const OPPORTUNITIES = [
     tags: ["healthcare", "digital health", "ai", "research"],
     award: 250000,
     kind: "call",
-    deadline: "2026-06-05",
+    deadline: "2026-10-05",
     deadlineNote: "Standard NIH receipt dates (Feb 5 / Jun 5 / Oct 5) recurring through 2029. NOFO expires March 6, 2029."
   },
   {
@@ -1584,6 +1584,31 @@ const OPPORTUNITIES = [
     deadlineNote: "Applications open as of May 27, 2026; rolling intake. Award tiers: Pilot $250K–$750K, Growth $750K–$1.5M, Scale $1.5M–$3M. Primarily non-dilutive, but certain venture-oriented companies may need to sign a future-equity-participation side letter granting limited rights in a later equity financing round. Administered by Louisiana Innovation (LA.IO). Source: rtcf.la.io and opportunitylouisiana.gov press release (May 27, 2026)."
   },
 
+
+  // ---------- DoD CDMRP ----------
+  {
+    title: "DoD CDMRP Breast Cancer Research Program (BCRP) — FY26",
+    funder: "DoD CDMRP",
+    url: "https://cdmrp.health.mil/bcrp/default",
+    description: "Department of Defense congressionally-directed cancer research program — largest single-cancer research program in the federal government. FY26 pre-announcements posted May 2026 for Breakthrough Awards (Levels 1 and 2, including Population Science Studies variants) and Clinical Research Extension. Full solicitations pending on grants.gov.",
+    tags: ["medical", "research"],
+    award: 8400000,
+    kind: "call",
+    deadline: "annual",
+    deadlineNote: "FY26 pre-announcements posted May 2026; formal solicitations expected on grants.gov within weeks with specific pre-app and full-app deadlines. Award mechanisms and ceilings (per pre-announcement): Breakthrough Award Level 1 Single PI $750K / Partnering PI $1.25M (3 years); Level 2 Single PI $1.65M / Partnering PI $2.50M (3 years); Level 2 Population Science Studies $2.50M–$3.35M (4 years); Clinical Research Extension $7.0M–$8.4M (4 years). Watch cdmrp.health.mil/bcrp for solicitation release. FY26 total CDMRP budget nearly doubled to $1.27B (up from $650M in FY25). Source: CDMRP BCRP FY26 pre-announcement, May 2026."
+  },
+  {
+    title: "DoD CDMRP Peer Reviewed Cancer Research Program (PRCRP) — FY26",
+    funder: "DoD CDMRP",
+    url: "https://cdmrp.health.mil/prcrp/default",
+    description: "DoD congressionally-directed cancer research covering cancers not funded through the other CDMRP cancer-specific programs. FY26 topic areas: bladder, blood, brain, colorectal, endometrial, esophageal, germ cell, glioblastoma, liver, lymphoma, mesothelioma, metastatic, myeloma, neuroblastoma, neuroendocrine tumors, pediatric brain tumors, pediatric/AYA cancers, sarcoma, stomach, thyroid. Explicitly EXCLUDES breast, kidney, lung, melanoma, ovarian, pancreatic, prostate, and rare cancer research — those have their own CDMRP programs.",
+    tags: ["medical", "research"],
+    award: null,
+    kind: "call",
+    deadline: "annual",
+    deadlineNote: "FY26 pre-announcements posted May 2026; formal solicitations expected on grants.gov within weeks. Award mechanisms and specific ceilings not yet in the pre-announcement — historical PRCRP mechanisms include Idea Award, Concept Award, Impact Award, and Career Development Award (varies by topic area). Watch cdmrp.health.mil/prcrp for solicitation release. FY26 total CDMRP budget nearly doubled to $1.27B. Source: CDMRP PRCRP FY26 pre-announcement + topic areas page, May 2026."
+  },
+
   // ========== INTERNATIONAL ==========
   // Note: most international funders restrict eligibility to citizens, residents,
   // or institutions in their country/region. Always check eligibility on the source page.
@@ -1853,7 +1878,7 @@ const OPPORTUNITIES = [
 ];
 
 // Bump this whenever you verify or add opportunities. Format: YYYY-MM-DD.
-const LAST_UPDATED = "2026-06-11";
+const LAST_UPDATED = "2026-09-03";
 
 // Region tags. Any entry without one of these gets "us" as the default,
 // so US-based programs don't all need to be tagged manually.
